@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arpit's Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__left">
+            <div class="accuracy-wrapper">
+                <p class="accuracy">~97%</p>
+                <p class="accuracy-text">
+                    accuracy is achieved using Random Forest Classfier This can be further improved by adding more data
+                    into the algorithm.
+                </p>
+            </div>
+            <img alt="background" src="{{ url_for('static', filename='images/bg.png') }}" />
+        </div>
+        <div class="container__right">
+            <form action="/predict" method="post" autocomplete="off" class="form">
+                <h1 class="title">
+                    News Classfication using ML
+                </h1>
+                <h2 class="subtitle">
+                    Please Enter the news atricle that you want to classify.
+                </h2>
+                <input type="text" name="Text" placeholder="Enter the news that you want to classify" min="0" />
+
+                <div class="button-and-result-wrapper">
+                    <button type="submit">Predict</button>
+                    <p id="output">{{pred}}</p>
+                </div>
+            </form>
+
+            <hr class="line" />
+
+            <p class="footer">
+                Made by
+                <a href="https://www.linkedin.com/in/arpit-dua-50b857175/" target="_blank">Arpit Duaa</a>
+                |
+                <a href="https://github.com/arpit211/my_major_project" target="_blank">View source code</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
