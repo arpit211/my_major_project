@@ -1,1 +1,1 @@
-# Diabetes-classification
+News Classification
